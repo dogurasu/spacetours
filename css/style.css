@@ -83,6 +83,45 @@ body {
   font: bold 1.6rem "Lato", sans-serif;
   color: #000; }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #89ABE3FF, #00539CFF);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all .2s; }
+  .heading-secondary:hover {
+    transform: scale(1.05);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.heading-tertiary {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #777; }
+
+.paragraph {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #777; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.3rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
+
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -111,6 +150,25 @@ body {
   .btn--white::after {
     background-color: #fff; }
 
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #00539CFF;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #00539CFF;
+  padding: 3px;
+  transition: all .2s; }
+
+.btn-text:hover {
+  background-color: #9CC3D5FF;
+  color: #000;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px); }
+
+.btn-text:active {
+  transform: translateY(0px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
 .btn::after {
   /* Alway specify content & display */
   content: "";
@@ -137,7 +195,6 @@ body {
     display: table;
     clear: both; }
   .row [class^="col-"] {
-    background-color: #FF9EAA;
     float: left;
     padding: 2rem; }
     .row [class^="col-"]:not(:last-child) {
@@ -175,3 +232,8 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     /* background-color: red; */ }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }

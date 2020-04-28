@@ -1,5 +1,6 @@
 .row {
     max-width: $grid-width;
+    // background-color: #eee;
     margin: 0 auto;
 
     // !(.row:last-child()) -> everything but the last child
@@ -14,6 +15,7 @@
     //          ' class*="col-" ' means select any class that contains "col-"
     //          ' class$="col-" ' means select any class that ends with "col-"
     [class^="col-"] {
+        background-color: #FF9EAA;
         float: left;
 
         padding: 2rem;
