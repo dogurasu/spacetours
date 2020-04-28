@@ -1,0 +1,15 @@
+// partial file (starts with _base.scss)
+// resets: styles for html & body element selectors
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+ 
+html {
+    // This defines what 1 rem is
+    font-size: 62.5%;
+}
