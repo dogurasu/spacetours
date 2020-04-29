@@ -3,3 +3,22 @@
     padding: 25rem 0;
     margin-top: -20vh;
 }
+
+.section-features {
+    padding: 20rem 0;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)), 
+    url(../img/spacetours-4.jpeg);
+    background-size: cover;
+    background-color: $color-grey-light-1;
+    // clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    transform: skewY(-7deg);
+    margin-top: 4rem;
+
+    & > * { // direct child selector that selects all children of an element
+        transform: skewY(7deg);
+    } // .section-features > * (direct children are the immediate children, not all descendents)
+
+}

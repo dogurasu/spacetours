@@ -16,7 +16,7 @@
     [class^="col-"] {
         float: left;
 
-        padding: 2rem;
+        padding: .5rem;
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;

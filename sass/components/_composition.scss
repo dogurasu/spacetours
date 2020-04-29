@@ -1,0 +1,41 @@
+.composition {
+    position: relative;
+
+    &__photo {
+        width: 60%;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+        border-radius: 2px;
+        position: absolute; // position is absolute with the first parent w/ "position relative" as its reference
+        transition: all .2s;
+        // outline-offset: 2rem;
+
+        &--p2 {
+            left: 0;
+            top: -2rem;
+        }
+
+        &--p3 {
+            right: -2rem;
+            top: 2rem;
+            
+        }
+
+        &--p1 {
+            left: 20%;
+            top: 10rem;
+            z-index: 1;
+        }
+
+        &:hover {
+            outline: 1.3rem solid $color-primary-light;
+            transform: scale(1.05) translateY(-.5rem);
+            // increase the shadow --> if the image is bigger, it feels like it is closer so thus, shadow is bigger
+            box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+            z-index: 5;
+        }
+    }
+
+    &:hover &__photo:not(:hover) {
+        transform: scale(0.95);
+    } //composition:hover &__photo:not(:hover)
+}

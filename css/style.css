@@ -48,6 +48,9 @@ Aquamarine: #9CC3D5FF
 html {
   font-size: 62.5%; }
 
+main {
+  background-color: #f7f7f7; }
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -84,7 +87,7 @@ body {
   color: #000; }
 
 .heading-secondary {
-  font-size: 3.5rem;
+  font-size: 4rem;
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
@@ -98,15 +101,17 @@ body {
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
 .heading-tertiary {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   text-transform: uppercase;
   color: #777; }
 
 .paragraph {
-  font-size: 1.6rem;
-  line-height: 1.5;
-  color: #777; }
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #777;
+  text-align: justify;
+  width: 90%; }
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
 
@@ -156,7 +161,8 @@ body {
   display: inline-block;
   text-decoration: none;
   border-bottom: 1px solid #00539CFF;
-  padding: 3px;
+  padding: 1rem;
+  border-radius: 3px;
   transition: all .2s; }
 
 .btn-text:hover {
@@ -185,6 +191,55 @@ body {
 .btn--animated {
   animation: moveInBottom 0.4s ease-out .6s; }
 
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 60%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    transition: all .2s; }
+    .composition__photo--p2 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p3 {
+      right: -2rem;
+      top: 2rem; }
+    .composition__photo--p1 {
+      left: 20%;
+      top: 10rem;
+      z-index: 1; }
+    .composition__photo:hover {
+      outline: 1.3rem solid #89ABE3FF;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 5; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #777;
+  font-size: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s; }
+  .feature-box__icon {
+    font-size: 6rem;
+    display: inline-block;
+    background-image: linear-gradient(to right, #89ABE3FF, #00539CFF);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 2rem 0; }
+  .feature-box:hover {
+    transform: translateY(-0.8rem) scale(1.05);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25); }
+  .feature-box__text {
+    font-size: 1.3rem;
+    line-height: 1.6; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -196,7 +251,7 @@ body {
     clear: both; }
   .row [class^="col-"] {
     float: left;
-    padding: 2rem; }
+    padding: .5rem; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
   .row .col-1-of-2 {
@@ -237,3 +292,13 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh; }
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(137, 171, 227, 0.8), rgba(0, 83, 156, 0.8)), url(../img/spacetours-4.jpeg);
+  background-size: cover;
+  background-color: #f7f7f7;
+  transform: skewY(-7deg);
+  margin-top: 4rem; }
+  .section-features > * {
+    transform: skewY(7deg); }
