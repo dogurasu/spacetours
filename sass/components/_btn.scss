@@ -34,6 +34,16 @@
         }
     }
 
+    &--blue {
+        background-color: $color-primary-dark;
+        color: $color-white;
+        /* margin-top: 50px; */
+        &::after {
+            background-color: $color-primary-dark;
+        }
+    }
+
+
     &-text {
         // display: inline-block;
         // padding: 1.5rem 4rem;
