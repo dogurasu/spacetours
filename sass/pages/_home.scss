@@ -2,6 +2,7 @@
     background-color: $color-grey-light-1;
     padding: 25rem 0;
     margin-top: -20rem;
+    overflow: hidden;
 }
 
 .section-features {
@@ -26,4 +27,36 @@
     background-color: $color-grey-light-1;
     padding: 25rem 0 15rem 0;
     // margin-bottom: 20vh;
+}
+
+.section-stories {
+    position: relative;
+    padding: 15rem 0;
+    // background-color: $color-grey-light-1;
+}
+
+.section-book {
+    padding: 15rem 0;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+}
+
+.book {
+    background-image: linear-gradient(105deg,
+                                      rgba($color-white, .9) 0%, 
+                                      rgba($color-white, .9) 50%,
+                                      transparent 50%), // at 50%, we want an orangered
+                                      
+                                      url(../img/space-10.jpg);
+                                      // url(..) second arg because it's behind the gradient
+    background-size: 100%; // same thing as cover
+    border-radius: $std-bor-radius;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+
+    // testing
+    height: 50rem;
+
+    &__form {
+        width: 50%;
+        padding: 6rem;
+    }
 }

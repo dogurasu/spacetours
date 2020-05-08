@@ -45,7 +45,7 @@ body {
 }
 
 .heading-secondary {
-    font-size: 4rem;
+    font-size: 3.7rem;
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
@@ -54,6 +54,7 @@ body {
     color: transparent;
     letter-spacing: 0.2rem;
     transition: all .2s;
+    // z-index: 1;
 
     &:hover {
         // transform: skewY(2deg) skewX(15deg) scale(1.1);
