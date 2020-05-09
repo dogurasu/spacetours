@@ -1,0 +1,99 @@
+.popup {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, .8);
+    opacity: 0;
+    visibility: hidden; // set visibility to hidden too because you want to completely hide (not show links) to display
+    transition: all .3s;
+
+    z-index: 2000;
+
+
+    &__content {
+        @include center_horiz_vert;
+        width: 75%;
+        // height: 50rem;
+        background-color: $color-white;
+        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        border-radius: 3px;
+        display: table;
+        overflow: hidden;
+        // backface-visibility: hidden;
+        opacity: 0;
+        transform: translate(-50%, -50%, scale(.25));
+        transition: all .5s .2s;
+    }
+
+    &__left {
+        width: 33.333333%;
+        // float: left;
+        display: table-cell; // use table cell to give each side the same height
+        
+    }
+
+    &__right { 
+        width: 66.666667%;
+        // float: left; // doesn't matter if it's left or right because their widths make up 100%;
+        display: table-cell;
+        vertical-align: middle; // table cell aligning content to middle (vertically)
+        padding: 3rem 5rem;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+    }
+
+    &__text {
+        font-size: 1.5rem;
+        font-weight: 700rem;
+        margin-bottom: 4rem;
+
+        -moz-column-count: 2; // we want 2 columns
+        -moz-column-gap: 4rem; // 1em = 15x; (inherits font size of current elem)
+        -moz-column-rule: 1px solid $color-grey-light-2; // add a border in between columns
+
+        // column layouts
+        column-count: 2; // we want 2 columns
+        column-gap: 4rem; // 1em = 15x; (inherits font size of current elem)
+        column-rule: 1px solid $color-grey-light-2; // add a border in between columns
+
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+    }
+
+    // OPEN STATES
+    &:target { // target pseudoclass applies to element (when button is clicked "#popup")
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:target &__content { // style popup element's child
+        opacity: 1;
+        transform: translate(-50%, -50%, scale(1))
+    }
+
+    &__close {
+        &:link,
+        &:visited {
+            color: $color-grey-dark;
+            position: absolute;
+            top: 2.5rem;
+            right: 3rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            line-height: 1;
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}
