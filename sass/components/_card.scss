@@ -154,6 +154,55 @@
         font-size: 6rem;
         font-weight: 300;
     }
+
+
+
+    @include respond(tab-port) {
+        height: auto;
+        border-radius: 5px;
+        background-color: $color-white;
+        box-shadow: $std-box-shadow; // 0 in the x-direction, 40px blur, rgba black, 15% opacity??
+
+        &__side {
+            height: auto;
+            overflow: hidden;
+            position: relative;
+            box-shadow: none;
+
+            &--back {
+                transform: rotateY(0deg);
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+            }
+
+        }
+
+        &:hover &__side--front {
+            transform: rotateY(0);
+        }
+
+        .__details {
+            padding: 1rem 3rem;
+        }
+        
+        // FRONT SIDE STYLING
+        &__cta {
+            // center method with position: absolute
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0); // width of element, -50% to put it back up
+            width: 100%;
+            padding: 4rem;
+        }
+        
+        &__price-box {
+            margin-bottom: 3rem;
+        }
+
+        &__price-value {
+            font-size: 6rem;
+        }
+    }
 }
 
 

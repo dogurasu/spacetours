@@ -15,6 +15,16 @@
         box-shadow: 0 1rem 3rem rgba($color-black, .1);
         text-align: center;
         cursor: pointer;
+
+        @include respond(tab-port) { // changes placement of nav button from tablet portrait and smaller
+            top: 4rem;
+            right: 4rem;
+        }
+
+        @include respond(phone) {
+            top: 3rem;
+            right: 3rem;
+        }
     }
 
     // the circle behind the white circle (white circle icon at top right of screen)
@@ -30,6 +40,16 @@
         z-index: 50;
 
         transition: transform .6s cubic-bezier(0.83, 0, 0.17, 1);
+
+        @include respond(tab-port) {
+            top: 4.5rem;
+            right: 4.5rem;
+        }
+
+        @include respond(phone) {
+            top: 3.5rem;
+            right: 3.5rem;
+        }
 
         // later when you click the nav button, the animation will scale
         // transform: scale(80);

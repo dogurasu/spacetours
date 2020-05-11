@@ -8,14 +8,57 @@
     padding: 0;
     box-sizing: inherit;
 }
- 
+
 html {
     // This defines what 1 rem is
-    font-size: 62.5%;
+    font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+
+    // // this way, you'd have to change manually with every change in screen size (use a mix-in instead)
+    // @media (max-width: 600px) {
+    //     font-size: 50%;
+    // }
+
+    // @include respond-phone {
+    //     font-size: 50%;
+    // }
+    
+    // @include respond(phone) { // unnecessary because both phone and tab-port would be applied (?)
+    //     font-size: 50%;
+    // }
+
+    // order matters 
+    //     - if screen is less than 900px, both tab-land and tab-port would apply
+    //     - therefore, if screen is actually less than 600px, we would want to apply tab-land and then check for tab-port
+    //       because if the screen is tab-port, it gets applied last (correctly)
+    // if we were doing mobile first, these would be in reverse order (because min-width) 
+
+
+    @include respond(tab-land) { // width < 1200? usually enough for landscape tablets
+        font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%;
+    }
+
+    @include respond(tab-port) { // width < 900?
+        font-size: 50%; // 1rem = 8px, 8/16 = 50%;
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%; // 1rem = 12, 12/16 = 75%;
+    }
+
+
 }
 
+body {
+    box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port) { // width < 900?
+        padding: 0;
+    }
+
+}
 
 main {
-    // background-color: $color-grey-light-1;
+    background-color: $color-grey-light-1;
     
 }

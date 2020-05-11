@@ -12,3 +12,39 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:     Phone
+600 - 900px:   Tablet portrait
+900 - 1200px:  Tablet landscape
+[1200 - 1800] is where normal styules apply
+1800px+ :      Big Desktop
+use a max-width media query for all ranges except for Big Desktop (use min-width)
+*/
+
+// $breakpoint argument choices:
+// - phone
+// - tab-port (tablet portrait)
+// - tab-land
+// - big-desktop
+
+// ORDER: Base + typography > general layout + grid > page layout > components
+
+// use ems for media queries
+// 1 em = 16px
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content }; // 600px / 16
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) { @content }; // 900px / 16
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) { @content }; // 1200 / 16
+    }
+    @if $breakpoint == big-desktop {
+        @media (min-width: 112.5em) { @content }; // 1800px / 16; we want to apply these styles when width is 1800px or greater
+    }
+}

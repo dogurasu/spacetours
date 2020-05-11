@@ -12,6 +12,16 @@
     transform: skewX(-12deg);
     z-index: 0;
 
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 5rem;
+        padding-left: 7rem;
+    }
+
+    @include respond(phone) {
+        transform: skewX(0);
+    }
+
     // use direct child to select everything w/in story div
     & > * {
         transform: skewX(12deg);
@@ -38,6 +48,10 @@
         transform: translateX(-3rem) skewX(12deg);
         position: relative; // because story__caption (figcaption element) needs us to be relative
         overflow: hidden;
+
+        @include respond(phone) {
+            transform: translateX(-3rem) skewX(0);
+        }
     }
 
     &__img {
@@ -50,6 +64,10 @@
 
     &__text {
         transform: skewX(12deg);
+        
+        @include respond(phone) {
+            transform: skewX(0);
+        }
     }
 
     &__caption {

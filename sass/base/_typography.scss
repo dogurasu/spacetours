@@ -4,9 +4,7 @@ body {
     /* font-size: 16px; */
     line-height: 1.7;
     color: $color-grey-dark;
-    padding: 3rem;
 
-    box-sizing: border-box;
 }
 
 .heading-primary {
@@ -22,11 +20,19 @@ body {
         letter-spacing: 3.5rem;
     
         animation: moveInLeft 0.5s ease-out;
+
+        @include respond(phone) { // width < 600?
+            letter-spacing: 1rem;
+            font-family: 5rem;
+        }
+
         /* 
         animation-delay: 3s;
         animation-iteration-count: 3;
          */
        
+
+
     }
     
     &--sub {
@@ -36,6 +42,10 @@ body {
         letter-spacing: 1rem;
         
         animation: moveInRight 0.5s ease-out;
+
+        @include respond(phone) { // width < 600?
+            letter-spacing: .5rem;
+        }
     }
 }
 
@@ -55,6 +65,15 @@ body {
     letter-spacing: 0.2rem;
     transition: all .2s;
     // z-index: 1;
+
+    @include respond(tab-port) { 
+        font-size: 3rem;
+    }
+
+    // since phone is smaller (600px < 900px), we put it after tab-port
+    @include respond(phone) { 
+        font-size: 2.5rem;
+    }
 
     &:hover {
         // transform: skewY(2deg) skewX(15deg) scale(1.1);
