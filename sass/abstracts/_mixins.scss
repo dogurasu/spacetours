@@ -35,16 +35,16 @@ use a max-width media query for all ranges except for Big Desktop (use min-width
 // 1 em = 16px
 
 @mixin respond($breakpoint) {
-    @if $breakpoint == phone {
-        @media (max-width: 37.5em) { @content }; // 600px / 16
+    @if $breakpoint == phone { 
+        @media only screen and (max-width: 37.5em) { @content }; // 600px / 16; only screen (if someone tries to print, media queries don't apply)
     }
     @if $breakpoint == tab-port {
-        @media (max-width: 56.25em) { @content }; // 900px / 16
+        @media only screen and (max-width: 56.25em) { @content }; // 900px / 16
     }
     @if $breakpoint == tab-land {
-        @media (max-width: 75em) { @content }; // 1200 / 16
+        @media only screen and (max-width: 75em) { @content }; // 1200 / 16
     }
     @if $breakpoint == big-desktop {
-        @media (min-width: 112.5em) { @content }; // 1800px / 16; we want to apply these styles when width is 1800px or greater
+        @media only screen and (min-width: 112.5em) { @content }; // 1800px / 16; we want to apply these styles when width is 1800px or greater
     }
 }

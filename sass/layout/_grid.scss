@@ -12,7 +12,7 @@
     }
 
     @include respond(tab-port) { // changes the max-width from default grid-width (desktop size) to a smaller max
-        max-width: 50rem;
+        max-width: 55rem;
         padding: 0 3rem;
     }
 
